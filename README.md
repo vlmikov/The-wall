@@ -1,12 +1,18 @@
 ## The Wall
 
-The Wall program is created 
+The Wall is a rest API program that keeps track of material quantities and cost for the
+construction of the 30-foot wall.
+
+Django and Django Rest Framework
+DB: PostgreSQL
+
+*configuration -  valid input data 
 
 1. ["GET","POST"] /create_wall_configuration/
 
-    GET  => Return all valid configurations
+    GET  => Fetch all valid configurations*
 
-    POST => Validate and save configurations
+    POST => Validate and save configxurations*
 
 2. ["GET", "PUT", "DELETE"] /create_wall_configuration/
 
@@ -37,7 +43,7 @@ The Wall program is created
 To use this Python script, you must first clone or download the repository and install the required dependencies,
 which can be found in the requirements.txt file. You can install them using pip:
 
-1. Create script directory
+1. Create project directory
 ```
 mkdir the_wall
 cd the_wall
@@ -45,7 +51,7 @@ cd the_wall
 2. Create virtual environment and activate it
 
 ```
-python3 -m venv env
+python -m venv env
 # For macOS
 source env/bin/activate
 # For Windows
@@ -63,7 +69,13 @@ pip3 install -r requirements.txt
 ```
 5. Set your credentials for postgress in settings.py
 
-5. Run test
+6. Migrate db
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+5. Run tests
 ```
 python manage.py test
 ```
